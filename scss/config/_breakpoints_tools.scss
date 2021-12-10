@@ -1,0 +1,19 @@
+$media: (
+        sm: 'screen and (max-width: #{$break-sm - 1})',
+) !default;
+
+@mixin media($query) {
+  $__query: null;
+
+  @each $type in $query {
+    @if map-has-key($media, $type) {
+      $__query: append($__query, unquote(map-get($media, $type)), comma);
+    } @else {
+      @warn $type;
+    }
+  }
+
+  @media #{$__query} {
+    @content;
+  }
+}

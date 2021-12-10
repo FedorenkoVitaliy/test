@@ -1,0 +1,363 @@
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+  display: block;
+}
+
+body {
+  position: relative;
+  background: url("../img/global/main-bg.jpg") no-repeat center top;
+  background-size: cover;
+  color: $color-white;
+  font-family: $main-font, sans-serif;
+  font-size: $font-main-size;
+  min-height: 100vh;
+  min-width: $global-content-width-min;
+
+  @include media(sm) {
+    background: url("../img/global/main-bg-mobile.jpg") no-repeat center top;
+  }
+}
+
+.b-wrapper {
+  background: url("../img/global/filter-bg.png") no-repeat center top;
+  max-width: $global-content-width-max;
+  margin: 0 auto;
+  min-height: 100vh;
+  box-sizing: border-box;
+
+  @include media(sm) {
+    background: url("../img/global/filter-bg-mobile.png") no-repeat center top;
+  }
+}
+
+.b-spark-bg {
+  background: url("../img/global/spark-bg.png") no-repeat center top;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 254px;
+}
+
+.b-content {
+  position: relative;
+  width: 100%;
+  text-transform: uppercase;
+  font-style: italic;
+  text-align: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.b-text-block {
+  position: relative;
+  width: 900px;
+  margin-left: 100px;
+  z-index: 10;
+
+  @include media(sm) {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  &_text {
+    font-size: 60px;
+    font-weight: 700;
+    font-style: italic;
+    line-height: 90px;
+    text-shadow: 0 0 20px #8867FF, 0 0 20px #8867FF, 0 0 20px $color-main;
+    margin-bottom: 70px;
+
+    @include media(sm) {
+      font-size: 30px;
+      line-height: 40px;
+      margin-bottom: 310px;
+      padding: 0 18px;
+    }
+  }
+
+  &_steps {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+
+    @include media(sm) {
+      margin-bottom: 10px;
+    }
+  }
+
+  &_step {
+    background: url("../img/global/step-bg.png") no-repeat center center;
+    width: 111px;
+    height: 77px;
+    line-height: 77px;
+    font-size: 48px;
+    font-weight: 800;
+    font-style: italic;
+
+    @include media(sm) {
+      background: url("../img/global/step-bg-mobile.png") no-repeat center center;
+      width: 63px;
+      height: 46px;
+      font-size: 32px;
+      line-height: 46px;
+    }
+  }
+
+  &_step-names {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  &_step-name {
+    font-size: 20px;
+    line-height: 25px;
+    font-style: italic;
+    font-weight: 500;
+
+    @include media(sm) {
+      font-size: 12px;
+      line-height: 15px;
+    }
+
+    &:nth-child(1) {
+      flex-basis: 112px;
+      margin-left: 128px;
+
+      @include media(sm) {
+        flex-basis: 65px;
+        margin-left: 5px;
+      }
+    }
+
+    &:nth-child(2) {
+      flex-basis: 152px;
+
+      @include media(sm) {
+        flex-basis: 90px;
+      }
+    }
+
+    &:nth-child(3) {
+      flex-basis: 112px;
+      margin-right: 155px;
+
+      @include media(sm) {
+        flex-basis: 66px;
+        margin-right: 15px;
+      }
+    }
+  }
+
+  &_divider {
+    background: url("../img/global/divider.png") no-repeat center center;
+    width: 30px;
+    height: 77px;
+    margin: 0 35px;
+
+    @include media(sm) {
+      height: 46px;
+      margin: 0 15px;
+    }
+  }
+}
+
+.logo {
+  display: inline-block;
+  padding-top: 60px;
+  margin-bottom: 100px;
+
+  @include media(sm) {
+    padding-top: 50px;
+    margin-bottom: 18px;
+  }
+
+  object {
+    pointer-events: none;
+
+    @include media(sm) {
+      width: 274px;
+      height: auto;
+    }
+  }
+}
+
+.b-button {
+  display: inline-block;
+  background: linear-gradient(180deg, #8867FF 0%, #573FD8 100%);
+  border-radius: 10px;
+  font-size: 25px;
+  line-height: 30px;
+  padding: 32px 92px;
+  color: $color-white;
+  font-weight: 700;
+  text-decoration: none;
+  margin: 0 auto 15px;
+
+  @include media(sm) {
+    font-size: 18px;
+    line-height: 22px;
+    margin-bottom: 10px;
+    padding: 20px 45px;
+  }
+
+  &:hover {
+    background: linear-gradient(180deg, #573FD8 0%, #8867FF 100%);
+  }
+}
+
+.b-link {
+  display: block;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 25px;
+  margin: 0 auto 70px;
+  color: $color-white;
+
+  @include media(sm) {
+    font-size: 13px;
+    line-height: 16px;
+    margin-bottom: 40px;
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.b-person {
+  -webkit-animation: moveThug 20s ease-in infinite;
+  animation: moveThug 20s ease-in infinite;
+  background: url("../img/global/person.png") no-repeat center center;
+  position: absolute;
+  width: 946px;
+  height: 886px;
+  bottom: 0;
+  right: -75px;
+  z-index: 20;
+
+  @include media(sm) {
+    -webkit-animation: none;
+    animation: none;
+    background: url("../img/global/person-mobile.png") no-repeat center center;
+    width: 292px;
+    height: 273px;
+    right: 0;
+    bottom: 275px;
+    z-index: 5;
+  }
+}
+
+.b-smoke {
+  -webkit-animation: moveThug 20s ease-in infinite;
+  animation: moveThug 20s ease-in infinite;
+  background: url("../img/global/smoke.png") no-repeat center center;
+  position: absolute;
+  width: 222px;
+  height: 233px;
+  top: 0;
+  right: 775px;
+  z-index: 20;
+
+  @include media(sm) {
+    -webkit-animation: none;
+    animation: none;
+    background: url("../img/global/smoke-mobile.png") no-repeat center center;
+    width: 69px;
+    height: 77px;
+    left: 40px;
+    bottom: 495px;
+    top: auto;
+    right: auto;
+  }
+}
+
+.b-bullet-1 {
+  -webkit-animation: moveBullets 6s ease-in-out infinite;
+  animation: moveBullets 6s ease-in-out infinite;
+  background: url("../img/global/bullet-1.png") no-repeat center center;
+  width: 216px;
+  height: 478px;
+  position: absolute;
+  right: -70px;
+  top: 5px;
+
+  @include media(sm) {
+    background: url("../img/global/bullet-1-mobile.png") no-repeat center center;
+    width: 87px;
+    height: 59px;
+    top: -20px;
+    left: 5px;
+    right: auto;
+  }
+}
+
+.b-bullet-2 {
+  -webkit-animation: moveBullets 6s ease-in-out infinite;
+  animation: moveBullets 6s ease-in-out infinite;
+  background: url("../img/global/bullet-2.png") no-repeat center center;
+  width: 155px;
+  height: 136px;
+  position: absolute;
+  right: 480px;
+  top: 50px;
+
+  @include media(sm) {
+    background: url("../img/global/bullet-2-mobile.png") no-repeat center center;
+    width: 63px;
+    height: 268px;
+    top: 95px;
+    right: 0;
+  }
+}
+
+.b-bullet-3 {
+  -webkit-animation: moveBullets 6s ease-in-out infinite;
+  animation: moveBullets 6s ease-in-out infinite;
+  background: url("../img/global/bullet-3.png") no-repeat center center;
+  width: 189px;
+  height: 146px;
+  position: absolute;
+  left: 725px;
+  bottom: 195px;
+  z-index: 15;
+
+  @include media(sm) {
+    background: url("../img/global/bullet-3-mobile.png") no-repeat center center;
+    width: 84px;
+    height: 199px;
+    bottom: 180px;
+    left: 0;
+  }
+}
+
+.b-bullet-4 {
+  -webkit-animation: moveBullets 6s ease-in-out infinite;
+  animation: moveBullets 6s ease-in-out infinite;
+  background: url("../img/global/bullet-4.png") no-repeat center center;
+  width: 184px;
+  height: 386px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  @include media(sm) {
+    background: url("../img/global/bullet-4-mobile.png") no-repeat center center;
+    width: 74px;
+    height: 63px;
+    bottom: 110px;
+    right: 0;
+    left: auto;
+    z-index: 15;
+  }
+}
+
+.b-filter-mobile {
+  @include media(sm) {
+    background: url("../img/global/filter-mobile.png") no-repeat center center;
+    position: absolute;
+    width: 100%;
+    height: 349px;
+    bottom: 0;
+    left: 0;
+  }
+}
